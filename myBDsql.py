@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 import MySQLdb
 import os
 clean = lambda : os.system('clear')
@@ -23,6 +24,8 @@ def selectbanco_graos(db):
     for row in cur.fetchall():
         print ''
         print '|  {0}  |  {1}  |  {2}  |'.format(row[0],row[1],row[2])
+    print ''
+    print ''
 
 def selectbanco_notasficais(db):
 
@@ -37,6 +40,8 @@ def selectbanco_notasficais(db):
     for row in cur.fetchall():
         print ''
         print '|  {0}  |  {1}  |  {2}  |  {3}  |  {4}  |  {5}  |  {6}  |  {7}  |'.format(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7])
+    print ''
+    print ''
 
 def selectbanco_notasficaisprodudtor(db):
 
@@ -51,16 +56,54 @@ def selectbanco_notasficaisprodudtor(db):
     for row in cur.fetchall():
         print ''
         print '|  {0}  |  {1}  |  {2}  |  {3}  |  {4}  |  {5}  |  {6}  |  {7}  |'.format(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7])
+    print ''
+    print ''
+
+def selectbanco_veiculos(db):
+
+    cur = db.cursor()
+    cur.execute("select Nome from empresa")
+    for i in cur.fetchall():
+        print '|{}|'.format(i[0])
+
+    consult = raw_input('escolha uma das empresa acima e digite:\n')
+    clean()
+    print '|  Modelo  |   Ano   |   Marca   |'
+    cur.execute("select distinct modelo,ano,marca from veiculos where veiculos.cnpj in (select cnpj from empresa where Nome = '{0}');".format(consult))
+    for row in cur.fetchall():
+        print ''
+        print '|  {0}  |  {1}  |  {2}  | '.format(row[0],row[1],row[2])
+    print ''
+    print ''
+
+def selectbanco_outros(db):
+
+    cur = db.cursor()
+    cur.execute("select Nome from empresa")
+    for i in cur.fetchall():
+        print '|{}|'.format(i[0])
+
+    consult = raw_input('escolha uma das empresa acima e digite:\n')
+    clean()
+    print '|  Tipo  |'
+    cur.execute("select distinct tipo from outros where outros.cnpj in (select cnpj from empresa where Nome = '{0}');".format(consult))
+    for row in cur.fetchall():
+        print ''
+        print '|  {0}  |'.format(row[0])
+    print ''
+    print ''
 
 def main():
-
+    x = ''
     db = iniciabanco()
-    while(True):
+    while(x != 0):
 
-        x = input('escolha uma das opcoes de consulta:\n'+
-        '1)consultar quantidades de graos nos silos de uma determinada empresa\n'+
-        '2) consultar notas fiscais emitidas para um cliente\n'+
-        '3) consultar notas fiscais emitidas para um produtor\n')
+        x = input('escolha uma das opcoes de consulta (digite 0 e aperte enter para siar):\n'+
+        '1) Consultar quantidades de graos nos silos de uma determinada empresa\n'+
+        '2) Consultar notas fiscais emitidas para um cliente\n'+
+        '3) Consultar notas fiscais emitidas para um produtor\n'+
+        '4) Consultar veículos de uma determinada empresa\n'+
+        '5) Consultar máquinas de uma determinada empresa\n')
         clean()
 
         if(x == 1):
@@ -71,6 +114,12 @@ def main():
 
         elif(x==3):
             selectbanco_notasficaisprodudtor(db)
+
+        elif(x==4):
+            selectbanco_veiculos(db)
+
+        elif(x==5):
+            selectbanco_outros(db)
 
 
 if __name__ == "__main__":
