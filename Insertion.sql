@@ -106,7 +106,7 @@ insert into contem values(4,'arroz',500.0);
     insert into funcionarios(id_func,cnpj,nome) values('03',91023341,'joao');
     insert into funcionarios(id_func,cnpj,nome) values('04',91023341,'jorge');
     insert into funcionarios(id_func,cnpj,nome) values('05',91023341,'mateus');
-    insert into funcionarios values('06',91023341,'acile','secretaria');
+    insert into funcionarios values('06',91023341,'alice','secretaria');
     insert into funcionarios(id_func,cnpj,nome) values('07',91023341,'fred');
    
 /*verificar tabelas*/
