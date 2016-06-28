@@ -32,7 +32,7 @@ insert into cliente values('196.214.313-51','Lucas Meirelles','Rio Grande',96015
     insert into telefone values('5384321231',null,'096.313.775-12');
     insert into telefone values('5381116712',null,'096.313.858-51');
     insert into telefone values('5396782212',null,'196.214.313-51');
-    insert into telefone values('5399875462',null,'096.313.775-12');
+    insert into telefone values('5399875462',null,'096.13.055-02');
     insert into telefone values('5399223312',null,'123.213.112-99');
 
 /* empresa 91023341 */
@@ -77,7 +77,7 @@ insert into contem values(4,'arroz',500.0);
     insert into notafiscal values('3849032773',null,'096.313.775-12 ',91023341,'arroz','2015-05-12','1',500.0,95.15);
     insert into notafiscal values('4908237409',null,'123.213.112-99',91023341,'trigo','2015-05-02','1',300.0,84.45);
     insert into notafiscal values('2904829531',null,'096.313.858-51',91023341,'soja','2015-05-02','1',1000.0,99.90);
-    insert into notafiscal values('2904829531',null,'196.214.313-51',91023341,'soja','2015-05-02','1',50.0,99.90);
+    insert into notafiscal values('2904829511',null,'196.214.313-51',91023341,'soja','2015-05-02','1',50.0,99.90);
 
 
 

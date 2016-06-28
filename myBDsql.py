@@ -56,7 +56,7 @@ def selectbanco_notasficais(db):
     consult = raw_input('escolha um dos cpf acima\n')
     clean()
     cur.execute("select nome,cod_fiscal,cliente.cpf,numero,cnpj,id_grao,data,valor_do_saco_de_grao from cliente,notafiscal,telefone where cliente.cpf = '{0}' and notafiscal.cpf = '{0}'and telefone.cpf = '{0}';".format(consult))
-    print "select nome,cod_fiscal,cliente.cpf,numero,cnpj,id_grao,quantidade,data from cliente,notafiscal,telefone where cliente.cpf = '{0}' and notafiscal.cpf = '{0}' and telefone.cpf = '{0}';".format(consult)
+#    print "select nome,cod_fiscal,cliente.cpf,numero,cnpj,id_grao,quantidade,data from cliente,notafiscal,telefone where cliente.cpf = '{0}' and notafiscal.cpf = '{0}' and telefone.cpf = '{0}';".format(consult)
     for row in cur.fetchall():
         print ''
         print '|  {0}  |  {1}  |  {2}  |  {3}  |  {4}  |  {5}  |  {6}  |  {7}  |'.format(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7])
@@ -102,6 +102,24 @@ def selectbanco_outros(db):
     print ''
     print ''
 
+def selectbanco_funcionarios(db):
+
+    cur = db.cursor()
+    cur.execute("select id_func from funcionarios")
+    for i in cur.fetchall():
+        print '|{0}|'.format(i[0])
+
+    consult = raw_input('escolha um dos um identificador de um funcionáro acima\n')
+    clean()
+    cur.execute("select nome,funcao from funcionarios where id_func = '{0}';".format(consult))
+    for row in cur.fetchall():
+        print ''
+        print '|  {0}  |  {1}  |'.format(row[0],row[1])
+    print ''
+    print ''
+
+
+
 def main():
     x = ''
     db = iniciabanco()
@@ -113,7 +131,8 @@ def main():
         '3) Consultar notas fiscais de saida\n'+
         '4) Consultar notas fiscais de entrada\n'+
         '5) Listar veiculos\n'+
-        '6) Listar maquinas\n')
+        '6) Listar maquinas\n'+
+        '7) Consultar informações de um funcionário\n')
         clean()
 
         if(x == 1):
@@ -125,14 +144,17 @@ def main():
         elif(x == 3):
             selectbanco_notasficais(db)
 
-        elif(x==4):
+        elif(x == 4):
             selectbanco_notasficaisprodudtor(db)
 
-        elif(x==5):
+        elif(x == 5):
             selectbanco_veiculos(db)
 
-        elif(x==6):
+        elif(x == 6):
             selectbanco_outros(db)
+
+        elif(x == 7):
+            selectbanco_funcionarios(db)
 
 
 if __name__ == "__main__":
