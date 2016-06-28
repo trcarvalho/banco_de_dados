@@ -18,3 +18,4 @@ select distinct modelo,ano,marca from veiculos where veiculos.cnpj in (select cn
 select distinct tipo from outros where outros.cnpj in (select cnpj from empresa where Nome = 'Silos&CIA') ;
 /*select distinct modelo,ano,marca,potencia from veiculos,maquinario where veiculos.cnpj in (select cnpj from empresa where Nome = 'Silos&CIA') and maquinario.cod_maq in(select cod_maq from veiculos where cnpj in (select cnpj from empresa where Nome = 'Silos&CIA'));
 */
+096.313.755-12

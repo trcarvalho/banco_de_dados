@@ -1,0 +1,65 @@
++---------------+---------+----------+
+| id_grao       | id_silo | cnpj     |
++---------------+---------+----------+
+| feijao        |       1 | 91023341 |
+| feijao        |       1 | 91023341 |
+| milho         |       2 | 91023341 |
+| arroz         |       2 | 91023341 |
+| soja          |       2 | 91023341 |
+| feijao branco |       3 | 91023341 |
+| ervilha       |       3 | 91023341 |
+| trigo         |       3 | 91023341 |
+| soja          |       4 | 91023341 |
+| trigo         |       4 | 91023341 |
+| milho         |       4 | 91023341 |
+| arroz         |       4 | 91023341 |
++---------------+---------+----------+
+
++---------------+---------+----------+
+| id_grao       | id_silo | cnpj     |
++---------------+---------+----------+
+| soja          |       5 | 13557849 |
+| ervilha       |       5 | 13557849 |
+| feijao branco |       5 | 13557849 |
+| soja          |       6 | 13557849 |
+| arroz         |       6 | 13557849 |
+| soja          |       7 | 13557849 |
+| ervilha       |       7 | 13557849 |
+| trigo         |       7 | 13557849 |
+| trigo         |       8 | 13557849 |
+| milho         |       8 | 13557849 |
+| soja          |       8 | 13557849 |
++---------------+---------+----------+
+
++---------------+---------+----------+
+| id_grao       | id_silo | cnpj     |
++---------------+---------+----------+
+| feijao        |       9 | 28111811 |
+| feijao branco |       9 | 28111811 |
+| arroz         |       9 | 28111811 |
+| arroz         |      10 | 28111811 |
+| soja          |      10 | 28111811 |
+| milho         |      10 | 28111811 |
+| ervilha       |      11 | 28111811 |
+| trigo         |      11 | 28111811 |
+| arroz         |      11 | 28111811 |
+| feijao branco |      12 | 28111811 |
+| soja          |      12 | 28111811 |
+| arroz         |      12 | 28111811 |
++---------------+---------+----------+
+
+
+/*notas fiscais clientes*/
+insert into notafiscal values('1102398120',null,'096.13.155-02',91023341,'feijao','12-04-2015','true',69.50);
+insert into notafiscal values('2089374289',null,'096.13.155-02',91023341,'milho','12-04-2015','true',107.50);
+insert into notafiscal values('3849032773',null,'096.13.155-02',91023341,'arroz','12-04-2015','true',95.15);
+insert into notafiscal values('4908237409',null,'123.213.112-99',91023341,'feijao','02-05-2015','true',84.45);
+insert into notafiscal values('2904829531',null,'123.213.112-99',91023341,'soja','02-05-2015','true',99.90);
+insert into notafiscal values('1239807424',null,'123.213.112-99',91023341,'feijao branco','02-05-2015','true',65.50);
+
+insert into notafiscal values('9283729181',null,'096.313.775-12',13557849,'soja','27-04-2015','true',87.45);
+insert into notafiscal values('1029381092',null,'096.313.858-51',13557849,'soja','27-04-2015','true',87.45);
+insert into notafiscal values('3298472309',null,'196.214.313-51',13557849,'soja','27-04-2015','true',87.45);
+insert into notafiscal values('1902837102',null,'096.313.858-51',13557849,'arroz','02-04-2015','true',77.50);
+insert into notafiscal values('3489537443',null,'196.214.313-51',13557849,'trigo','02-04-2015','true',87.53);
+insert into notafiscal values('3495834905',null,'096.313.858-51',1355784,'trigo','12-04-2015','true',87.50);

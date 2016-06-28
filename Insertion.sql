@@ -66,22 +66,22 @@ insert into contem values(4,'arroz',500.0);
     insert into notafiscal values('0013132112','8734112',null,91023341,'arroz','2015-03-27','0',400.0,87.50);
     insert into notafiscal values('0002232111','0023331',null,91023341,'milho','2015-04-02','0',200.0,87.53);
     insert into notafiscal values('0102232101','0023331',null,91023341,'milho','2015-04-20','0',800.0,87.53);
-    insert into notafiscal values('0002232110','0011233',null,91023341,'trigo','2015-04-07','0',300.0,87.53);
-    insert into notafiscal values('9837910371','0001234',null,91023341,'feijao','2015-03-29','0',300.0,64.50);
+    insert into notafiscal values('0002232110','1223333',null,91023341,'trigo','2015-04-07','0',300.0,87.53);
+    insert into notafiscal values('9837910371','9890011',null,91023341,'feijao','2015-03-29','0',300.0,64.50);
     insert into notafiscal values('1013132412','0001234',null,91023341,'arroz','2015-04-27','0',500.0,87.50);
     insert into notafiscal values('0012232611','8734112',null,91023341,'soja','2015-04-02','0',1000.0,87.53);
-    
+
         /*notas fiscais clientes*/
     insert into notafiscal values('1102398120',null,'096.13.155-02',91023341,'feijao','2015-05-12','1',300.0,69.50);
-    insert into notafiscal values('2089374289',null,'096.13.155-02',91023341,'milho','2015-05-12','1',800.0,107.50);
-    insert into notafiscal values('3849032773',null,'096.13.155-02',91023341,'arroz','2015-05-12','1',500.0,95.15);
+    insert into notafiscal values('2089374289',null,'096.13.055-02',91023341,'milho','2015-05-12','1',800.0,107.50);
+    insert into notafiscal values('3849032773',null,'096.313.775-12 ',91023341,'arroz','2015-05-12','1',500.0,95.15);
     insert into notafiscal values('4908237409',null,'123.213.112-99',91023341,'trigo','2015-05-02','1',300.0,84.45);
-    insert into notafiscal values('2904829531',null,'123.213.112-99',91023341,'soja','2015-05-02','1',1000.0,99.90);
-    
-    
-    
-    
-    
+    insert into notafiscal values('2904829531',null,'096.313.858-51',91023341,'soja','2015-05-02','1',1000.0,99.90);
+    insert into notafiscal values('2904829531',null,'196.214.313-51',91023341,'soja','2015-05-02','1',50.0,99.90);
+
+
+
+
 	/*inserção de maquinas*/
   insert into maquinario values( '12231123',91023341,89.5);
   insert into maquinario values( '21112312',91023341,23.5);
@@ -89,17 +89,17 @@ insert into contem values(4,'arroz',500.0);
   insert into maquinario values( '12398109',91023341,50.0);
   insert into maquinario values( '02211199',91023341,189.5);
   insert into maquinario values( '12039128',91023341,289.5);
-  
+
 	/*outros */
 	insert into outros values(91023341,'12231123','esteira_3');
 	insert into outros values(91023341,'21112312','esteira_2');
 	insert into outros values(91023341,'89731293','motor');
-  
+
     /* veiculos*/
     insert into veiculos values(91023341,'12398109',2009,'24250', 'volks');
     insert into veiculos values(91023341,'02211199',2015,'FH 460', 'Volvo');
     insert into veiculos values(91023341,'12039128',2013,'Atego 2425', 'Mercedes');
-    
+
 	 /* funcionarios*/
     insert into funcionarios values('01',91023341,'Pedro','balanceiro');
     insert into funcionarios values('02',91023341,'Taina','supervisor');
@@ -108,7 +108,7 @@ insert into contem values(4,'arroz',500.0);
     insert into funcionarios(id_func,cnpj,nome) values('05',91023341,'mateus');
     insert into funcionarios values('06',91023341,'alice','secretaria');
     insert into funcionarios(id_func,cnpj,nome) values('07',91023341,'fred');
-   
+
 /*verificar tabelas*/
 
 select * from empresa;

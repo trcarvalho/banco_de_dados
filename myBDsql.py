@@ -55,7 +55,8 @@ def selectbanco_notasficais(db):
 
     consult = raw_input('escolha um dos cpf acima\n')
     clean()
-    cur.execute("select nome,cod_fiscal,cliente.cpf,numero,cnpj,id_grao,quantidade,data from cliente,notafiscal,telefone where cliente.cpf = '{0}' and notafiscal.cpf = '{0}' and telefone.cpf = '{0}';".format(consult))
+    cur.execute("select nome,cod_fiscal,cliente.cpf,numero,cnpj,id_grao,data,valor_do_saco_de_grao from cliente,notafiscal,telefone where cliente.cpf = '{0}' and notafiscal.cpf = '{0}'and telefone.cpf = '{0}';".format(consult))
+    print "select nome,cod_fiscal,cliente.cpf,numero,cnpj,id_grao,quantidade,data from cliente,notafiscal,telefone where cliente.cpf = '{0}' and notafiscal.cpf = '{0}' and telefone.cpf = '{0}';".format(consult)
     for row in cur.fetchall():
         print ''
         print '|  {0}  |  {1}  |  {2}  |  {3}  |  {4}  |  {5}  |  {6}  |  {7}  |'.format(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7])
@@ -81,7 +82,7 @@ def selectbanco_notasficaisprodudtor(db):
 def selectbanco_veiculos(db):
 
     cur = db.cursor()
-    
+
     print '|  Modelo  |   Ano   |   Marca   |'
     cur.execute("select distinct modelo,ano,marca from veiculos ;")
     for row in cur.fetchall():
@@ -117,7 +118,7 @@ def main():
 
         if(x == 1):
             selectbanco_graos(db)
-        
+
         elif(x == 2):
             selectSilo_capacidade(db)
 
