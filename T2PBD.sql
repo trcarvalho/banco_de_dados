@@ -24,20 +24,7 @@ insert into graos values('feijão',200.0,'A2');
 
 
 create table produtor(
-  modelo_15 varchar(10) not null,
-  nome varchar(30) not null,
-  CIDADE varchar(30) not null,
-  END_CEP INT NOT NULL,
-  END_NUMERO INT NOT NULL,
-  END_RUA varchar(30) not null
-);
-alter table produtor add primary key (modelo_15);
-insert into produtor values('1223333','Roberson da Silva','Pelotas',96046900,1233,'Rua das Palmeiras');
-
-
-  create table cliente(
-    cpf varchar(17) not null,
-    nome varchar(30) not null,
+  modelo_15 varchar(10) not nullem uma determinada
     CIDADE varchar(30) not null,
     END_CEP INT NOT NULL,
     END_NUMERO INT NOT NULL,
@@ -84,7 +71,7 @@ create table notafiscal(
   id_grao varchar(15) not null,
   data date not null,
   saida char(1) not null,
-  quantidade float(6) not null, 
+  quantidade float(6) not null,
   valor_do_saco_de_grao decimal (5,3) not null
 );
 alter table notafiscal add primary key (cod_fiscal);
@@ -132,6 +119,5 @@ create table funcionarios(
 );
 insert into funcionarios values('00',91023341,'Feliciano da Rosa','Gerente');
 alter table funcionarios add primary key (id_func);
+alter table funcionarios add foreign key (cnpj) references empresa (cnpj) on delete cascade on update cascade;
 alter table silo add foreign key (cnpj) references empresa (CNPJ) on delete cascade on update cascade;
-
-

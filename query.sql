@@ -8,14 +8,13 @@ select Nome,id_grao,quantidade quantidade(tn),id_silo silo from contem,empresa w
 select nome,cod_fiscal,cliente.cpf,numero,cnpj,id_grao,data,valor_do_saco_de_grao from cliente,notafiscal,telefone where cliente.cpf = '096.13.155-02' and notafiscal.cpf = '096.13.155-02'and telefone.cpf = '096.13.155-02';
 
 /*lista notas fiscais de um determinado produtor*/
-select nome,cod_fiscal,produtor.modelo_15,numero,cnpj,id_grao,data,valor_do_saco_de_grao from produtor,notafiscal,telefone where produtor.modelo_15 =  and notafiscal.modelo_15 =  and telefone.modelo_15 =
+select nome,cod_fiscal,produtor.modelo_15,numero,cnpj,id_grao,data,valor_do_saco_de_grao from produtor,notafiscal,telefone where produtor.modelo_15 = '0001234' and notafiscal.modelo_15 = '0001234' and telefone.modelo_15 = '0001234';
 
 /*lista vaiculos de uma empresa*/
 select distinct modelo,ano,marca from veiculos where veiculos.cnpj in (select cnpj from empresa where Nome = 'Silos&CIA');
 
 
-/*lista máquinas usada em uma determinada empresa*/
+/*lista máquinas usadas da empresa*/
 select distinct tipo from outros where outros.cnpj in (select cnpj from empresa where Nome = 'Silos&CIA') ;
-/*select distinct modelo,ano,marca,potencia from veiculos,maquinario where veiculos.cnpj in (select cnpj from empresa where Nome = 'Silos&CIA') and maquinario.cod_maq in(select cod_maq from veiculos where cnpj in (select cnpj from empresa where Nome = 'Silos&CIA'));
-*/
-096.313.755-12
+/*seleciona um funcionário*/
+select nome,funcao from funcionarios where id_func = '0';
